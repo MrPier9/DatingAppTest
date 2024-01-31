@@ -15,6 +15,8 @@ public static class ApplicationServiceExtensions
         });
         services.AddCors();
         services.AddScoped<ITokenService, TokenService>();
+        services.AddScoped<IUserRepository, UserRepository>();
+        services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
         services.AddEndpointsApiExplorer();//service for swagger
         services.AddSwaggerGen();//service for swagger
